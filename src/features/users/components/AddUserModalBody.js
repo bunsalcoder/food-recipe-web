@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import InputText from '../../../components/Input/InputText'
 import ErrorText from '../../../components/Typography/ErrorText'
 import { showNotification } from "../../common/headerSlice"
-import { addNewLead } from "../userSlice"
+import { addNewUser } from "../userSlice"
 
 const INITIAL_LEAD_OBJ = {
     first_name : "",
@@ -15,21 +15,21 @@ function AddUserModalBody({closeModal}){
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
-    const [userObj, setLeadObj] = useState(INITIAL_LEAD_OBJ)
+    const [userObj, setUserObj] = useState(INITIAL_LEAD_OBJ)
 
 
-    const saveNewLead = () => {
+    const saveNewUser = () => {
         if(userObj.first_name.trim() === "")return setErrorMessage("First Name is required!")
         else if(userObj.email.trim() === "")return setErrorMessage("Email id is required!")
         else{
-            let newLeadObj = {
+            let newUserObj = {
                 "id": 7,
                 "email": userObj.email,
                 "first_name": userObj.first_name,
                 "last_name": userObj.last_name,
                 "avatar": "https://reqres.in/img/faces/1-image.jpg"
             }
-            dispatch(addNewLead({newLeadObj}))
+            dispatch(addNewUser({newUserObj}))
             dispatch(showNotification({message : "New User Added!", status : 1}))
             closeModal()
         }
@@ -37,7 +37,7 @@ function AddUserModalBody({closeModal}){
 
     const updateFormValue = ({updateType, value}) => {
         setErrorMessage("")
-        setLeadObj({...userObj, [updateType] : value})
+        setUserObj({...userObj, [updateType] : value})
     }
 
     return(
@@ -53,7 +53,7 @@ function AddUserModalBody({closeModal}){
             <ErrorText styleClass="mt-16">{errorMessage}</ErrorText>
             <div className="modal-action">
                 <button  className="btn btn-ghost" onClick={() => closeModal()}>Cancel</button>
-                <button  className="btn btn-primary px-6" onClick={() => saveNewLead()}>Save</button>
+                <button  className="btn btn-primary px-6" onClick={() => saveNewUser()}>Save</button>
             </div>
         </>
     )

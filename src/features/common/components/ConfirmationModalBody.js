@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux'
 import { CONFIRMATION_MODAL_CLOSE_TYPES } from '../../../utils/globalConstantUtil'
-import { deleteLead } from '../../users/userSlice'
+import { deleteUser } from '../../users/userSlice'
 import { showNotification } from '../headerSlice'
 
 function ConfirmationModalBody({ extraObject, closeModal}){
@@ -13,7 +13,7 @@ function ConfirmationModalBody({ extraObject, closeModal}){
     const proceedWithYes = async() => {
         if(type === CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE){
             // positive response, call api or dispatch redux function
-            dispatch(deleteLead({index}))
+            dispatch(deleteUser({index}))
             dispatch(showNotification({message : "User Deleted!", status : 1}))
         }
         closeModal()

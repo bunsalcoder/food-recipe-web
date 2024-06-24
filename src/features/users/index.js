@@ -11,13 +11,13 @@ const TopSideButtons = () => {
 
     const dispatch = useDispatch()
 
-    const openAddNewLeadModal = () => {
+    const openAddNewUserModal = () => {
         dispatch(openModal({title : "Add New User", bodyType : MODAL_BODY_TYPES.USER_ADD_NEW}))
     }
 
     return(
         <div className="inline-block float-right">
-            <button className="btn px-6 btn-sm normal-case btn-primary" onClick={() => openAddNewLeadModal()}>Add New</button>
+            <button className="btn px-6 btn-sm normal-case btn-primary" onClick={() => openAddNewUserModal()}>Add New</button>
         </div>
     )
 }
@@ -41,7 +41,7 @@ function Users(){
         else return <div className="badge badge-ghost">Open</div>
     }
 
-    const deleteCurrentLead = (index) => {
+    const deleteCurrentUser = (index) => {
         dispatch(openModal({title : "Confirmation", bodyType : MODAL_BODY_TYPES.CONFIRMATION, 
         extraObject : { message : `Are you sure you want to delete this user?`, type : CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE, index}}))
     }
@@ -86,7 +86,7 @@ function Users(){
                                     <td>{moment(new Date()).add(-5*(k+2), 'days').format("DD MMM YY")}</td>
                                     <td>{getDummyStatus(k)}</td>
                                     <td>{l.last_name}</td>
-                                    <td><button className="btn btn-square btn-ghost" onClick={() => deleteCurrentLead(k)}><TrashIcon className="w-5"/></button></td>
+                                    <td><button className="btn btn-square btn-ghost" onClick={() => deleteCurrentUser(k)}><TrashIcon className="w-5"/></button></td>
                                     </tr>
                                 )
                             })

@@ -15,12 +15,12 @@ export const usersSlice = createSlice({
     reducers: {
 
 
-        addNewLead: (state, action) => {
-            let {newLeadObj} = action.payload
-            state.users = [...state.users, newLeadObj]
+        addNewUser: (state, action) => {
+            let {newUserObj} = action.payload
+            state.users = [...state.users, newUserObj]
         },
 
-        deleteLead: (state, action) => {
+        deleteUser: (state, action) => {
             let {index} = action.payload
             state.users.splice(index, 1)
         }
@@ -40,6 +40,6 @@ export const usersSlice = createSlice({
     }
 })
 
-export const { addNewLead, deleteLead } = usersSlice.actions
+export const { addNewUser, deleteUser } = usersSlice.actions
 
 export default usersSlice.reducer
