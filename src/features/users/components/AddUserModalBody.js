@@ -5,7 +5,7 @@ import ErrorText from '../../../components/Typography/ErrorText'
 import { showNotification } from "../../common/headerSlice"
 import { addNewUser } from "../userSlice"
 
-const INITIAL_LEAD_OBJ = {
+const INITIAL_USER_OBJ = {
     first_name : "",
     last_name : "",
     email : ""
@@ -15,7 +15,7 @@ function AddUserModalBody({closeModal}){
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
-    const [userObj, setUserObj] = useState(INITIAL_LEAD_OBJ)
+    const [userObj, setUserObj] = useState(INITIAL_USER_OBJ)
 
 
     const saveNewUser = () => {

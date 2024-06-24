@@ -11,7 +11,7 @@ function ConfirmationModalBody({ extraObject, closeModal}){
 
 
     const proceedWithYes = async() => {
-        if(type === CONFIRMATION_MODAL_CLOSE_TYPES.LEAD_DELETE){
+        if(type === CONFIRMATION_MODAL_CLOSE_TYPES.USER_DELETE){
             // positive response, call api or dispatch redux function
             dispatch(deleteUser({index}))
             dispatch(showNotification({message : "User Deleted!", status : 1}))
