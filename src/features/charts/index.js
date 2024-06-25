@@ -8,7 +8,6 @@ import Datepicker from "react-tailwindcss-datepicker";
 import { useState } from 'react'
 
 function Charts(){
-
     const [dateValue, setDateValue] = useState({ 
         startDate: new Date(), 
         endDate: new Date() 
