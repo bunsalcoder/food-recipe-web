@@ -34,28 +34,26 @@ function LineChart(){
     },
   };
 
-  
   const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
   const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      label: 'MAU',
-      data: labels.map(() => { return Math.random() * 100 + 500 }),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
+    labels,
+    datasets: [
+      {
+        fill: true,
+        label: 'MAU',
+        data: labels.map(() => { return Math.random() * 100 + 500 }),
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ],
+  };
   
-
-    return(
-      <TitleCard title={"Montly Active Users (in k)"} >
-          <Line data={data} options={options}/>
-      </TitleCard>
-    )
+  return(
+    <TitleCard title={"Montly Active Users (in k)"} >
+      <Line data={data} options={options}/>
+    </TitleCard>
+  )
 }
 
 

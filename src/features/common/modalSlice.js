@@ -3,14 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const modalSlice = createSlice({
     name: 'modal',
     initialState: {
-        title: "",  // current  title state management
-        isOpen : false,   // modal state management for opening closing
-        bodyType : "",   // modal content management
-        size : "",   // modal content management
-        extraObject : {},   
+        title: "",
+        isOpen : false,
+        bodyType : "",
+        size : "",
+        extraObject : {},
     },
     reducers: {
-
         openModal: (state, action) => {
             const {title, bodyType, extraObject, size} = action.payload
             state.isOpen = true
@@ -26,7 +25,6 @@ export const modalSlice = createSlice({
             state.title = ""
             state.extraObject = {}
         },
-
     }
 })
 

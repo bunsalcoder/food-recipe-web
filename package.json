@@ -1,9 +1,9 @@
 {
-  "name": "admin-dashboard-template-dashwind",
+  "name": "food-recipe-admin",
   "version": "1.0.0",
-  "description": "Admin Dashboard template built with create-react-app, tailwind css and daisy UI. Template uses rich tailwind css utility classes and have components of daisy UI, also have redux toolkit implemented for store management.",
+  "description": "Food Recipe Admin",
   "scripts": {
-    "start": "react-scripts start",
+    "start:dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/srobbin01/tailwind-dashboard-template-dashwind"
+    "url": "git+https://github.com/bunsalcoder/food-recipe-web"
   },
   "keywords": [
     "reactjs",
@@ -45,11 +45,8 @@
     "react-router",
     "react-charts"
   ],
-  "author": "srobbin01",
+  "author": "foodrecipe",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/srobbin01/tailwind-dashboard-template-dashwind/issues"
-  },
   "homepage": "",
   "eslintConfig": {
     "extends": [

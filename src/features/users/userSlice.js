@@ -13,8 +13,6 @@ export const usersSlice = createSlice({
         users : []
     },
     reducers: {
-
-
         addNewUser: (state, action) => {
             let {newUserObj} = action.payload
             state.users = [...state.users, newUserObj]
